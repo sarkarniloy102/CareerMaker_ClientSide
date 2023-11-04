@@ -6,14 +6,14 @@ const Navbar = () => {
     const navbar =
         <>
             <ul className="lg:flex items-center gap-5">
-                <li><Link to={"/home"} className="hover:text-purple-400">Home</Link></li>
-                <li><Link to={"/services"} className="hover:text-purple-400">Services</Link></li>
-                <li className="dropdown dropdown-bottom"><Link className="hover:text-purple-400">
+                <li><Link to={"/home"} className="hover:text-violet-400">Home</Link></li>
+                <li><Link to={"/services"} className="hover:text-violet-400">Services</Link></li>
+                <li className="dropdown dropdown-bottom"><Link className="hover:text-violet-400">
                     <label tabIndex={0} className="m-1">Dashboard  </label> <RiArrowDropDownLine className="text-3xl"></RiArrowDropDownLine>
                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                        <li ><Link className="hover:text-purple-400"> My-services </Link></li>
-                        <li ><Link className="hover:text-purple-400">Add-services</Link></li>
-                        <li ><Link className="hover:text-purple-400">My-schedules</Link></li>
+                        <li ><Link className="hover:text-violet-400"> My-services </Link></li>
+                        <li ><Link className="hover:text-violet-400">Add-services</Link></li>
+                        <li ><Link className="hover:text-violet-400">My-schedules</Link></li>
                     </ul>
                 </Link></li>
             </ul>
@@ -31,7 +31,7 @@ const Navbar = () => {
                         {navbar}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl hover:text-purple-400">Career maker</a>
+                <a className="btn btn-ghost normal-case text-xl hover:text-violet-400">Career maker</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -39,9 +39,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end flex items-center gap-x-2 sm:ml-auto ">
-
-
-                <input className="btn text-gray-500 hover:text-purple-400 dark:text-gray-400 dark:hover:text-purple-700 cursor-pointer"
+                <input className="btn text-gray-500 hover:text-violet-400 dark:text-gray-400 dark:hover:text-violet-700 cursor-pointer"
                     type="submit" value="Login" />
                 < HiOutlineLogin></HiOutlineLogin>
             </div>
