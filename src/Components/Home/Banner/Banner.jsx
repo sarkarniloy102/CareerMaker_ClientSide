@@ -27,7 +27,7 @@ const Banner = () => {
                         {/* <span className="block mb-2 dark:text-violet-400">Mamba design system</span> */}
                         <h1 className="text-5xl font-extrabold dark:text-gray-50">Build career with <br /> <span className='text-violet-400'>Career Maker </span></h1>
                         <p className="my-8">
-                            <span className="font-medium dark:text-gray-50">Welcome to Career Maker, your trusted resource for shaping and advancing your professional journey. At Career Maker, we are dedicated to guiding individuals towards their dream careers and helping them achieve their full potential. Our platform offers a wealth of information, resources, and expert guidance to empower you in making informed career choices, acquiring the necessary skills, and excelling in your chosen field. </span>
+                            <span className="font-medium dark:text-gray-50">Welcome to <span className='font-bold text-violet-400'>Career Maker</span> , your trusted resource for shaping and advancing your professional journey. At Career Maker, we are dedicated to guiding individuals towards their dream careers and helping them achieve their full potential. Our platform offers a wealth of information, resources, and expert guidance to empower you in making informed career choices, acquiring the necessary skills, and excelling in your chosen field. </span>
                         </p>
                         <form action="" className="self-stretch space-y-3">
                             <div>
