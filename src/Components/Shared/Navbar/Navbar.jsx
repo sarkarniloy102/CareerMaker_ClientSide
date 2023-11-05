@@ -6,7 +6,7 @@ const Navbar = () => {
     const navbar =
         <>
             <ul className="lg:flex items-center gap-5">
-                <li><Link to={"/home"} className="hover:text-violet-400">Home</Link></li>
+                <li><Link to={"/"} className="hover:text-violet-400">Home</Link></li>
                 <li><Link to={"/services"} className="hover:text-violet-400">Services</Link></li>
                 <li className="dropdown dropdown-bottom"><Link className="hover:text-violet-400">
                     <label tabIndex={0} className="m-1">Dashboard  </label> <RiArrowDropDownLine className="text-3xl"></RiArrowDropDownLine>
@@ -38,12 +38,13 @@ const Navbar = () => {
                     {navbar}
                 </ul>
             </div>
-            <div className="navbar-end flex items-center gap-x-2 sm:ml-auto ">
+
+            <Link to={"/login"} className="navbar-end flex items-center gap-x-2 sm:ml-auto ">
                 <input className="btn text-gray-500 hover:text-violet-400 dark:text-gray-400 dark:hover:text-violet-700 cursor-pointer"
                     type="submit" value="Login" />
                 < HiOutlineLogin></HiOutlineLogin>
-            </div>
-        </div>
+            </Link>
+        </div >
     );
 };
 
