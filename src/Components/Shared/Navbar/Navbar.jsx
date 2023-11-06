@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom";
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import { HiOutlineLogin } from 'react-icons/hi';
+import {IoLogOut} from 'react-icons/io5'
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handlelogout = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
     const navbar =
         <>
             <ul className="lg:flex items-center gap-5">
@@ -38,12 +48,22 @@ const Navbar = () => {
                     {navbar}
                 </ul>
             </div>
+            {
+                user?.email ?
+                    <>
+                        <Link onClick={handlelogout} to={"/login"} className="navbar-end flex items-center gap-x-2 sm:ml-auto ">
+                            <input className="btn text-gray-500 hover:text-violet-400 dark:text-gray-400 dark:hover:text-violet-700 cursor-pointer"
+                                type="submit" value="Logout" />
+                           <IoLogOut></IoLogOut>
+                        </Link>
+                    </> :
+                    <Link to={"/login"} className="navbar-end flex items-center gap-x-2 sm:ml-auto ">
+                        <input className="btn text-gray-500 hover:text-violet-400 dark:text-gray-400 dark:hover:text-violet-700 cursor-pointer"
+                            type="submit" value="Login" />
+                        < HiOutlineLogin></HiOutlineLogin>
+                    </Link>
+            }
 
-            <Link to={"/login"} className="navbar-end flex items-center gap-x-2 sm:ml-auto ">
-                <input className="btn text-gray-500 hover:text-violet-400 dark:text-gray-400 dark:hover:text-violet-700 cursor-pointer"
-                    type="submit" value="Login" />
-                < HiOutlineLogin></HiOutlineLogin>
-            </Link>
         </div >
     );
 };
