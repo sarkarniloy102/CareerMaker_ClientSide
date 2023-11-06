@@ -1,33 +1,44 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import { HiOutlineLogin } from 'react-icons/hi';
-import {IoLogOut} from 'react-icons/io5'
+import { IoLogOut } from 'react-icons/io5'
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const location = useLocation();
 
     const handlelogout = () => {
         logOut()
             .then(() => { })
             .catch(error => console.log(error));
     }
+    const handledash = () => {
+        return (
+            <Navigate to={location.pathname} replace={true} state={location.pathname} />
+        );
+    }
     const navbar =
         <>
-            <ul className="lg:flex items-center gap-5">
+            <div  className="lg:flex items-center gap-5">
                 <li><Link to={"/"} className="hover:text-violet-400">Home</Link></li>
                 <li><Link to={"/services"} className="hover:text-violet-400">Services</Link></li>
-                <li className="dropdown dropdown-bottom"><Link className="hover:text-violet-400">
-                    <label tabIndex={0} className="m-1">Dashboard  </label> <RiArrowDropDownLine className="text-3xl"></RiArrowDropDownLine>
+
+                <li onClick={handledash}  className="dropdown dropdown-bottom hover:text-violet-400 cursor-pointers">
+                    
+                    
+                    <label tabIndex={0} className="m-1">Dashboard  <RiArrowDropDownLine className="text-3xl"></RiArrowDropDownLine></label> 
+                    
+                    
                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                         <li ><Link className="hover:text-violet-400"> My-services </Link></li>
                         <li ><Link className="hover:text-violet-400">Add-services</Link></li>
                         <li ><Link className="hover:text-violet-400">My-schedules</Link></li>
                     </ul>
-                </Link></li>
-            </ul>
-
+                </li>
+            </div>
+            
 
         </>
     return (
@@ -52,13 +63,13 @@ const Navbar = () => {
                 user?.email ?
                     <>
                         <Link onClick={handlelogout} to={"/login"} className="navbar-end flex items-center gap-x-2 sm:ml-auto ">
-                            <input className="btn text-gray-500 hover:text-violet-400 dark:text-gray-400 dark:hover:text-violet-700 cursor-pointer"
+                            <input className="btn text-gray-500 hover:text-violet-400   cursor-pointer"
                                 type="submit" value="Logout" />
-                           <IoLogOut></IoLogOut>
+                            <IoLogOut></IoLogOut>
                         </Link>
                     </> :
                     <Link to={"/login"} className="navbar-end flex items-center gap-x-2 sm:ml-auto ">
-                        <input className="btn text-gray-500 hover:text-violet-400 dark:text-gray-400 dark:hover:text-violet-700 cursor-pointer"
+                        <input className="btn text-gray-500 hover:text-violet-400  cursor-pointer"
                             type="submit" value="Login" />
                         < HiOutlineLogin></HiOutlineLogin>
                     </Link>
