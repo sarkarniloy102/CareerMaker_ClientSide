@@ -43,7 +43,7 @@ const LogIn = () => {
                     </button>
                 </div>
                 <p className="text-xs text-center sm:text-gray-400 ">Do not have an account?
-                    <Link to={'/signup'} rel="noopener noreferrer" href="#" className="underline ml-2 text-gray-100">Sign up</Link>
+                    <Link to={'/register'} rel="noopener noreferrer" href="#" className="underline ml-2 text-gray-100">Sign up</Link>
                 </p>
             </div>
         </div>
