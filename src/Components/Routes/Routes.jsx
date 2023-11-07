@@ -6,36 +6,36 @@ import Register from "../Registration/Register";
 import Services from "../Home/Services/Services";
 import ServiceDetails from "../Home/ServiceDetails/ServiceDetails";
 
-const router = createBrowserRouter ([
-    {
-      path: "/",
-      element: <Main></Main>,
-      children: [
-        {
-            path: "/",
-            element: <Home></Home>
-        },
-        {
-          path:'/login',
-          element: <LogIn></LogIn>
-        },
-        {
-          path: '/register',
-          element: <Register></Register>
-        },
-        {
-          path: '/services',
-          element: <Services></Services>
-        },
-        {
-          path: "/servicedetails/:id", 
-          element: <ServiceDetails></ServiceDetails>,
-          loader: ({params})=> fetch(`http://localhost:5000/popularservices/${params.id}`)
-        }
-        
-       
-      ]
-    },
-  ]);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>
+      },
+      {
+        path: '/login',
+        element: <LogIn></LogIn>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
+      },
+      {
+        path: '/services',
+        element: <Services></Services>
+      },
+      {
+        path: "/servicedetails/:id",
+        element: <ServiceDetails></ServiceDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/popularservices/${params.id}`)
+      }
 
-  export default router;
+
+    ]
+  },
+]);
+
+export default router;
