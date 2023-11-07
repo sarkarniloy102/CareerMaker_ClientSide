@@ -5,6 +5,7 @@ import { IoLogOut } from 'react-icons/io5'
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 
+
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const location = useLocation();
@@ -21,24 +22,25 @@ const Navbar = () => {
     }
     const navbar =
         <>
-            <div  className="lg:flex items-center gap-5">
+            <div className="lg:flex items-center gap-5">
                 <li><Link to={"/"} className="hover:text-violet-400">Home</Link></li>
                 <li><Link to={"/services"} className="hover:text-violet-400">Services</Link></li>
 
-                <li onClick={handledash}  className="dropdown dropdown-bottom hover:text-violet-400 cursor-pointers">
-                    
-                    
-                    <label tabIndex={0} className="m-1">Dashboard  <RiArrowDropDownLine className="text-3xl"></RiArrowDropDownLine></label> 
-                    
-                    
+                <li onClick={handledash} className="dropdown dropdown-bottom hover:text-violet-400 cursor-pointers">
+                    <label tabIndex={0} className="m-1">Dashboard  <RiArrowDropDownLine className="text-3xl"></RiArrowDropDownLine></label>
+
                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+
                         <li ><Link className="hover:text-violet-400"> My-services </Link></li>
                         <li ><Link className="hover:text-violet-400">Add-services</Link></li>
                         <li ><Link className="hover:text-violet-400">My-schedules</Link></li>
+
                     </ul>
+
                 </li>
+
             </div>
-            
+
 
         </>
     return (

@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 
 const PopularService = ({popularservice}) => {
-    const { serviceName, serviceImage, serviceDescription, serviceProvider, servicePrice } = popularservice;
+    const {_id, serviceName, serviceImage, serviceDescription, serviceProvider, servicePrice } = popularservice;
     const {name,image}=serviceProvider;
     return (
         <div>
@@ -18,8 +19,9 @@ const PopularService = ({popularservice}) => {
                     <p className="text-sm text-gray-400">{serviceDescription}</p>
                 </div>
                 <p>Price: {servicePrice}</p>
+                
                
-                <button type="button" className="px-8 py-3 font-semibold border rounded border-gray-100 text-gray-100 hover:bg-violet-400">View Details</button>
+              <Link to={`/servicedetails/${_id}`}>  <button type="button" className="px-8 py-3 font-semibold border rounded border-gray-100 text-gray-100 hover:bg-violet-400">View Details</button> </Link>
                
             </div>
         </div>
