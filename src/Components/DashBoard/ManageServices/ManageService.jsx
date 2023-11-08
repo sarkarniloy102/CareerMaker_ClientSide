@@ -1,7 +1,10 @@
 
 
-const ManageService = ({ manageservice }) => {
-    const { service, area, yourname, email, image, price, description } = manageservice;
+const ManageService = ({ manageservice,handledelete }) => {
+    const { _id, service, area, yourname, email, image, price, description } = manageservice;
+
+   
+
     return (
         <div>
             <div className="flex flex-col max-w-lg p-6 space-y-6 mx-auto  my-10 overflow-hidden rounded-lg shadow-md bg-gray-900 text-gray-100">
@@ -20,11 +23,11 @@ const ManageService = ({ manageservice }) => {
                 </div>
                 <p>Price: {price}</p>
 
-            <div className="flex justify-between gap-5">
-            <button type="button" className=" md:w-1/2 px-8 py-3 font-semibold border rounded border-gray-100 text-gray-100 hover:bg-violet-400">Update</button>
-            <button type="button" className="md:w-1/2 px-8 py-3 font-semibold border rounded border-gray-100 text-gray-100 hover:bg-red-600">Delete</button>
-            </div>
-                {/* <Link to={`/servicedetails/${_id}`}>  <button type="button" className="px-8 py-3 font-semibold border rounded border-gray-100 text-gray-100 hover:bg-violet-400">View Details</button> </Link> */}
+                <div className="flex justify-between gap-5">
+                    <button type="button" className=" md:w-1/2 px-8 py-3 font-semibold border rounded border-gray-100 text-gray-100 hover:bg-violet-400" >Update</button>
+
+                    <button type="button" onClick = {()=> handledelete(_id)} className="md:w-1/2 px-8 py-3 font-semibold border rounded border-gray-100 text-gray-100 hover:bg-red-600">Delete</button>
+                </div>
 
             </div>
         </div>

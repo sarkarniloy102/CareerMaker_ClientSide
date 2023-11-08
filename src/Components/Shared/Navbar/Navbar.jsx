@@ -65,9 +65,10 @@ const Navbar = () => {
             {
                 user?.email ?
                     <>
-                        <p>{user.email}</p>
+                        
                         <Link onClick={handlelogout} to={"/login"} className="navbar-end flex items-center gap-x-2 sm:ml-auto ">
-                            <input className="btn text-gray-500 hover:text-violet-400   cursor-pointer"
+                        <p>{user.email}</p>
+                         <input className="btn text-gray-500 hover:text-violet-400   cursor-pointer"
                                 type="submit" value="Logout" />
                             <IoLogOut></IoLogOut>
                         </Link>
