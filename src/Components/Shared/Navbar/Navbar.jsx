@@ -32,7 +32,7 @@ const Navbar = () => {
                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
 
                         <li ><Link className="hover:text-violet-400"> My-services </Link></li>
-                        <li ><Link className="hover:text-violet-400">Add-services</Link></li>
+                        <li ><Link to={"/addservice"} className="hover:text-violet-400">Add-services</Link></li>
                         <li ><Link to={"/myschedules"} className="hover:text-violet-400">My-schedules</Link></li>
 
                     </ul>

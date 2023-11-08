@@ -10,6 +10,8 @@ const BookedServices = () => {
     const user = useContext(AuthContext);
     const email = user?.email;
     const [bookservices, setbookservices] = useState([]);
+    // console.log(email);
+    console.log(user?.email)
     const url = `http://localhost:5000/mypurchase?email=${email}`;
     useEffect(() => {
         const fetchData = async () => {

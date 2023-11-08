@@ -7,6 +7,7 @@ import Services from "../Home/Services/Services";
 import ServiceDetails from "../Home/ServiceDetails/ServiceDetails";
 import Errorelement from "../Errorelement/Errorelement";
 import BookedServices from "../DashBoard/MySchedules/BookedServices";
+import AddServices from "../DashBoard/AddServices/AddServices";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path:"/myschedules",
         element: <BookedServices></BookedServices>
+      },
+      {
+        path: "/addservice",
+        element: <AddServices></AddServices>
       }
 
 

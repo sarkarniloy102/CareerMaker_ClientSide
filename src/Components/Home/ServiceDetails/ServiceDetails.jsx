@@ -18,10 +18,10 @@ const ServiceDetails = () => {
         date: "",
         instruct: "",
     });
-    formData["email"]=user?.email;
 
 
     const userpurchase = { ...servicedetails };
+    userpurchase["email"]=user?.email;
     // Handle input change
     const handleInputChange = (e) => {
         const { name, value } = e.target;
