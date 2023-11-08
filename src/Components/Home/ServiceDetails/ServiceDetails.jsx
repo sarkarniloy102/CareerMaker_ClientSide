@@ -1,4 +1,4 @@
-import {  useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { FaLocationDot } from 'react-icons/fa6';
 import Swal from "sweetalert2";
 import { useContext, useState } from "react";
@@ -12,16 +12,15 @@ const ServiceDetails = () => {
     const servicedetails = useLoaderData()
     const { _id, serviceName, serviceImage, serviceDescription, serviceProvider, servicePrice } = servicedetails;
     const { name, image, serviceProviderLocation, shortDescription } = serviceProvider;
-
+    console.log(user?.email);
     // State to store form input values
     const [formData, setFormData] = useState({
-        email: user?.email,
         date: "",
         instruct: "",
     });
+    formData["email"]=user?.email;
 
-    // const { date, instruct, email } = formData;
-    // console.log(instruct, date, email)
+
     const userpurchase = { ...servicedetails };
     // Handle input change
     const handleInputChange = (e) => {
@@ -30,18 +29,22 @@ const ServiceDetails = () => {
             ...formData,
             [name]: value,
         });
+        const { date, instruct, email } = formData;
+        console.log(instruct, date, email)
     };
     // handle modal for purchase
     const handlemodal = (e) => {
         e.preventDefault();
-        const form = e.target.value;
-        console.log(form);
+        // const form = e.target.value;
+        // console.log(form);
 
         console.log(servicedetails);
         console.log("adding");
         // send data to the server
+        delete userpurchase._id;
         const purchasedata = { ...userpurchase, formData };
         console.log(purchasedata);
+
 
         fetch('http://localhost:5000/mypurchase', {
             method: 'POST',
@@ -133,8 +136,8 @@ const ServiceDetails = () => {
                                             // value={instruct}
                                             onChange={handleInputChange}
                                         />
-                                
-                                        <input  className="btn btn-accent w-full" type="submit" value="Purchase" />
+
+                                        <input className="btn btn-accent w-full" type="submit" value="Purchase" />
                                     </form>
                                     <div className="modal-action">
                                         <form method="dialog">

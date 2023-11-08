@@ -5,11 +5,14 @@ import LogIn from "../LogIn/LogIn";
 import Register from "../Registration/Register";
 import Services from "../Home/Services/Services";
 import ServiceDetails from "../Home/ServiceDetails/ServiceDetails";
+import Errorelement from "../Errorelement/Errorelement";
+import BookedServices from "../DashBoard/MySchedules/BookedServices";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <Errorelement></Errorelement>,
     children: [
       {
         path: "/",
@@ -31,6 +34,10 @@ const router = createBrowserRouter([
         path: "/servicedetails/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({ params }) => fetch(`http://localhost:5000/popularservices/${params.id}`)
+      },
+      {
+        path:"/myschedules",
+        element: <BookedServices></BookedServices>
       }
 
 

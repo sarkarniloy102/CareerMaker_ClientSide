@@ -33,7 +33,7 @@ const Navbar = () => {
 
                         <li ><Link className="hover:text-violet-400"> My-services </Link></li>
                         <li ><Link className="hover:text-violet-400">Add-services</Link></li>
-                        <li ><Link className="hover:text-violet-400">My-schedules</Link></li>
+                        <li ><Link to={"/myschedules"} className="hover:text-violet-400">My-schedules</Link></li>
 
                     </ul>
 
