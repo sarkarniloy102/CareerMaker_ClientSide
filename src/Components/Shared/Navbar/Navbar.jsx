@@ -31,8 +31,9 @@ const Navbar = () => {
 
                     <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
 
-                        <li ><Link className="hover:text-violet-400"> My-services </Link></li>
+                        
                         <li ><Link to={"/addservice"} className="hover:text-violet-400">Add-services</Link></li>
+                        <li ><Link to={"/manageservice"} className="hover:text-violet-400"> Manage-services </Link></li>
                         <li ><Link to={"/myschedules"} className="hover:text-violet-400">My-schedules</Link></li>
 
                     </ul>
@@ -64,11 +65,13 @@ const Navbar = () => {
             {
                 user?.email ?
                     <>
+                        <p>{user.email}</p>
                         <Link onClick={handlelogout} to={"/login"} className="navbar-end flex items-center gap-x-2 sm:ml-auto ">
                             <input className="btn text-gray-500 hover:text-violet-400   cursor-pointer"
                                 type="submit" value="Logout" />
                             <IoLogOut></IoLogOut>
                         </Link>
+
                     </> :
                     <Link to={"/login"} className="navbar-end flex items-center gap-x-2 sm:ml-auto ">
                         <input className="btn text-gray-500 hover:text-violet-400  cursor-pointer"

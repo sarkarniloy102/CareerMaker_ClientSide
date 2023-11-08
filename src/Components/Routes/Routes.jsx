@@ -8,6 +8,7 @@ import ServiceDetails from "../Home/ServiceDetails/ServiceDetails";
 import Errorelement from "../Errorelement/Errorelement";
 import BookedServices from "../DashBoard/MySchedules/BookedServices";
 import AddServices from "../DashBoard/AddServices/AddServices";
+import ManageServices from "../DashBoard/ManageServices/ManageServices";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/addservice",
         element: <AddServices></AddServices>
+      },
+      {
+        path: "/manageservice",
+        element: <ManageServices></ManageServices>
       }
 
 

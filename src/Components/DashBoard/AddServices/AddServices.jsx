@@ -3,7 +3,8 @@ import { useContext } from 'react';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../../Provider/AuthProvider';
 const AddServices = () => {
-    const user = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
+    console.log(user);
     const handleproduct = e => {
         e.preventDefault();
         const form = e.target;
@@ -12,9 +13,11 @@ const AddServices = () => {
         const price = form.price.value;
         const description = form.description.value;
         const image = form.image.value;
+        const yourname = user?.displayName;
+        const email = user?.email;
         // const yourname = form.yourname.value;
         // const email = form.email.value;
-        const newservice = { service, area,  price, description, image };
+        const newservice = { service, yourname, email, area, price, description, image };
         console.log(newservice);
 
         // send data to the server
@@ -67,10 +70,10 @@ const AddServices = () => {
                 <div className="md:flex mb-8">
                     <div className="form-control md:w-1/2">
                         <label className="label">
-                            <span  className="label-text">Name</span>
+                            <span className="label-text">Name</span>
                         </label>
                         <label className="input-group">
-                            <p name="yourname" className='w-full  border p-3 bg-slate-900'>helo{user?.email}</p>
+                            <p name="yourname" className='w-full  border p-3 bg-slate-900'>{user?.displayName}</p>
                             {/* <input type="submit" name="type" placeholder="movie type" className="input input-bordered w-full" /> */}
                         </label>
                     </div>
@@ -117,7 +120,7 @@ const AddServices = () => {
                                 placeholder="write short description"
                                 className="w-full rounded-md focus:ring focus:ri focus:ri border-gray-700 input input-bordered"
 
-                            
+
 
                             />
 

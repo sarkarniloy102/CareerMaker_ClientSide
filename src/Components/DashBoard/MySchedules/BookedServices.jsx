@@ -7,12 +7,12 @@ import BookedService from "./BookedService";
 
 const BookedServices = () => {
 
-    const user = useContext(AuthContext);
-    const email = user?.email;
+    const { user } = useContext(AuthContext);
+    // const email = user?.email;
     const [bookservices, setbookservices] = useState([]);
     // console.log(email);
     console.log(user?.email)
-    const url = `http://localhost:5000/mypurchase?email=${email}`;
+    const url = `http://localhost:5000/mypurchase?email=${user?.email}`;
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -34,9 +34,9 @@ const BookedServices = () => {
 
     return (
         <div className="grid grid-cols-3 gap-5">
-           <h2>hello{bookservices.length}</h2>
+            <h2>hello{bookservices.length}</h2>
             {
-                
+
                 bookservices.map((bookservice, idx) => (
                     // Check the condition here and render the content accordingly
                     console.log(bookservice.formData.email),

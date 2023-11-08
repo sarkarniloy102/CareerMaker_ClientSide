@@ -7,6 +7,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 
 
 const ServiceDetails = () => {
+    // const { user } = useContext(AuthContext);
     const { user } = useContext(AuthContext);
 
     const servicedetails = useLoaderData()
