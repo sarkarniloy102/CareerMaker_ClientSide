@@ -4,6 +4,7 @@ import ManageService from "./ManageService";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
+
 const ManageServices = () => {
 
 
@@ -161,7 +162,7 @@ const ManageServices = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2  mx-auto ">
                 {manageservices?.map((manageservice, idx) => (
                     <ManageService key={idx} manageservice={manageservice} handleUpdate={handleUpdate} handledelete={handledelete}></ManageService>
-
+                    
                 ))}
             </div>
 

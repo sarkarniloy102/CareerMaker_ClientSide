@@ -9,6 +9,7 @@ import Errorelement from "../Errorelement/Errorelement";
 import BookedServices from "../DashBoard/MySchedules/BookedServices";
 import AddServices from "../DashBoard/AddServices/AddServices";
 import ManageServices from "../DashBoard/ManageServices/ManageServices";
+import AboutUs from "../Home/Home/AboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+      },
+      {
+        path: "/aboutus",
+        element: <AboutUs></AboutUs>
       },
       {
         path: '/login',

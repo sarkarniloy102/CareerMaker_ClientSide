@@ -39,7 +39,7 @@ const Navbar = () => {
                     </ul>
 
                 </li>
-
+                <li><Link to={"/aboutus"} className="hover:text-violet-400">About Us</Link></li>
             </div>
 
 

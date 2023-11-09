@@ -5,7 +5,8 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 import BookedService from "./BookedService";
 
 
-const BookedServices = () => {
+const BookedServices = ({manageservice}) => {
+    console.log(manageservice);
 
     const { user } = useContext(AuthContext);
     // const email = user?.email;
@@ -33,19 +34,24 @@ const BookedServices = () => {
 
 
     return (
-        <div className="grid grid-cols-3 gap-5">
-            <h2>hello{bookservices.length}</h2>
-            {
+        <div>
+            <h2 className="text-4xl text-center font-bold">Purchase</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                {
+                    bookservices.map((bookservice, idx) => (
+                        // Check the condition here and render the content accordingly
+                        console.log(bookservice.formData.email),
 
-                bookservices.map((bookservice, idx) => (
-                    // Check the condition here and render the content accordingly
-                    console.log(bookservice.formData.email),
+                        <BookedService key={idx} bookservice={bookservice}></BookedService>
 
-                    <BookedService key={idx} bookservice={bookservice}></BookedService>
-
-                ))
-            }
+                    ))
+                }
+            </div>
+            <div>
+            <h2 className="text-4xl text-center font-bold">Pending Works</h2>
+            </div>
         </div>
+
     );
 
 };
